@@ -24,7 +24,7 @@
     }
 
     .card {
-      background: #2f3136; /* серый квадрат */
+      background: #2f3136;
       padding: 50px 28px 40px;
       width: 92%;
       max-width: 430px;
@@ -57,21 +57,25 @@
       margin-bottom: 34px;
     }
 
+    /* КНОПКА */
     .btn {
+      position: relative;
       display: inline-block;
-      background: #0088cc;
-      color: #fff;
       padding: 14px 32px;
       border-radius: 16px;
       font-size: 19px;
       font-weight: 600;
+      color: #fff;
       text-decoration: none;
-      transition: .2s;
+      background: linear-gradient(180deg, #2aabee, #229ed9);
       box-shadow: 0 12px 30px rgba(0, 139, 204, 0.4);
+      overflow: hidden;
+      transition: .2s;
+      cursor: pointer;
     }
 
     .btn:hover {
-      background: #0073aa;
+      background: linear-gradient(180deg, #36b8f5, #2490c7);
       transform: translateY(-1px);
     }
 
@@ -79,6 +83,35 @@
       transform: translateY(1px);
     }
 
+    /* АНИМАЦИЯ СВЕТА */
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -120%;
+      width: 80%;
+      height: 220%;
+      background: linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 45%,
+        rgba(255, 255, 255, 0) 90%
+      );
+      transform: skewX(-20deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -120%;
+      }
+      45% {
+        left: 140%;
+      }
+      100% {
+        left: 140%;
+      }
+    }
   </style>
 </head>
 
